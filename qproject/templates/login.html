@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            text-align: center;
+            
+        }
+        header{
+            background-color: yellowgreen;
+            color: red;
+            height: 65px;
+        }
+        .a{
+            margin-top: 100px;
+            text-align: center;
+            
+            
+            
+            
+        }
+        form{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header><h1>LOGIN PAGE</h1></header>
+    <div class="a">
+    <form method="POST" action="/login">
+        {% csrf_token %}
+        <input type="text" name="l" placeholder="login" required><br><br>
+        <input type="password" name="p" placeholder="password" required><br><br>
+        <input type="submit" value="login">
+    </form>
+    </div><br>
+    <button><a href="/sign">signup</a></button><br>
+    {{r}}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        header{
+            background-color: yellowgreen;
+            color: red;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header><a href="/login">LOGOUT</a><h1>POSTED QUESTIONS</h1></header>
+
+    {% for i in d %}
+    <form method="POST" action="/answer">
+        {% csrf_token %}
+        <li>{{i.question}}</li>
+        <input type="number" value="{{i.id}}" name="id" hidden>
+        <textarea name="ans"></textarea>
+        
+        <input type="submit" value="submit">
+    </form>
+    {% endfor %}
+    <a href="/posted_ans">see posted answers</a>
+
+</body>
+</html>

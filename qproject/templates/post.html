@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        i{
+            color: rgb(38, 60, 5);
+        }
+        header{
+            background-color: yellowgreen;
+            color: red;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header><a href="/login">LOGOUT</a><h1>POST YOUR QUESTIONS</h1></header><br>
+    <div class="a">
+     <form method="POST" action="/post_question">
+        {% csrf_token %}
+        
+        <textarea name="q" placeholder="POST QUESTION" rows="10" cols="50"></textarea>
+        <input type="submit" value="POST">
+     </form>
+    </div>
+     <h4><i>{{d}}</i></h4><br>
+     <bold><h3><a href="/posted">see posted questions</a></h3></bold>
+     
+</body>
+</html>
